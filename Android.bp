@@ -15570,6 +15570,23 @@ cc_prebuilt_binary {
 	soc_specific: true,
 }
 
+cc_prebuilt_binary {
+	name: "init_thh_isee",
+	owner: "xiaomi",
+	target: {
+		android_arm64: {
+			srcs: ["proprietary/vendor/bin/init_thh_isee"],
+			shared_libs: ["libutils", "libhidlbase", "libimsg_log", "vendor.microtrust.hardware.thh@2.0", "libc++", "libc", "libm", "libdl", ],
+		},
+	},
+	compile_multilib: "64",
+	strip: {
+		none: true,
+	},
+	prefer: true,
+	soc_specific: true,
+}
+
 sh_binary {
 	name: "lib3a.ccu.ddr",
 	owner: "xiaomi",
